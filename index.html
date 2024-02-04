@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,21 +15,28 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="title">
-            <div class="title__logo">
+            <div class="title__logo animation-up">
                 <img class="title__img" src="./img/company-logo-white.svg" alt="Konstruct">
             </div>
             <div class="title__description">
-                <h1 class="title__title">Partner with konstuct</h1>
-                <p class="title__text">An award-winning construction management firm</p>
+                <h1 class="title__title animation-left">Partner with konstuct</h1>
+                <p class="title__text animation-right">An award-winning construction management firm</p>
             </div>
-            <div class="title__scroll">Scroll down</div>
+            <div class="title__scroll animation-down">
+                <a class="title__scroll-up" href="#story">Scroll down</a>
+                <a class="title__scroll-down" href="#story"><i class="fa-solid fa-angles-down"></i></a>
+            </div>
         </div>
         <div class="menu">
            <div class="container">
                 <nav class="menu__nav">
-                    <div class="menu__logo"><img src="./img/company-logo-black.svg" alt="Konstruct"></div>
+                    <div class="menu__logo">
+                        <a class="menu__logo-link" href="#header">
+                            <img src="./img/company-logo-black.svg" alt="Konstruct">
+                        </a>     
+                    </div>
                     <ul class="menu__list">
                         <li class="menu__list-item"><a href="#!">Home</a></li>
                         <li class="menu__list-item"><a href="#!">About</a></li>
@@ -37,6 +44,11 @@
                         <li class="menu__list-item"><a href="#!">Work</a></li>
                         <li class="menu__list-item"><a href="#!">Contact</a></li>
                     </ul>
+                    <div class="menu__burger">
+                        <div class="menu__burger-line"></div>
+                        <div class="menu__burger-line"></div>
+                        <div class="menu__burger-line"></div>
+                    </div>
                 </nav>
            </div>
         </div>
@@ -45,7 +57,7 @@
 
     <!-- MAIN -->
     <main class="main">
-        <section class="story">
+        <section class="story" id="story">
             <div class="container">
                 <h2 class="story__title">Our story</h2>
             </div>

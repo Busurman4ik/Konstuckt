@@ -25,10 +25,73 @@ hr {
     max-width: 940px;
     width: 100%;
     
+    padding: 0 30px;
     margin: 0 auto;
 }
 
+// ANIMATION
+// UP
+.animation-up {
+      transform: translateY(-300%);
+      animation: up 1s ease-out forwards;
+      @keyframes up {
+            0% {
+                  transform: translateY(-300%);
+            }
+
+            100%{
+                  transform: translateY(0);
+            }
+      }
+}
+
+// LEFT
+.animation-left {
+      transform: translateX(-150%);
+      animation: left 1s ease-out forwards;
+      @keyframes left {
+            0% {
+                  transform: translateX(-150%);
+            }
+            100% {
+                  transform: translatey(0%);
+            }
+      }
+}
+
+// RIGHT
+.animation-right {
+      transform: translateX(150%);
+      animation: right 1s ease-out forwards;
+      @keyframes right {
+            0% {
+                  transform: translateX(150%);
+            }
+            100% {
+                  transform: translatey(0%);
+            }
+      }
+}
+
+// DOWN
+.animation-down {
+      transform: translateY(300%);
+      animation: down 1s ease-out forwards;
+      @keyframes down{
+            0%{
+                  transform: translateY(300%);
+            }
+
+            100%{
+                  transform: translateY(0);
+            }
+      }
+}
+
 // HEADER
+header {
+      overflow: hidden;
+}
 
 .title {
     display: flex;
@@ -38,16 +101,19 @@ hr {
     width: 100%;
     height: 100vh;
 
-    padding: 41px 0 72px;
+    padding: 41px 0 56px;
 
 
-		&__logo {
+      &__logo {
             max-width: 102px;
 
             margin: 0 auto;
-		}
 
-		&__title {
+            animation-duration: 2s;
+            animation-delay: 1.5s;
+      }
+
+      &__title {
             font-family: 'Bebas Neue', sans-serif;
             font-weight: 400;
             font-size: 60px;
@@ -58,67 +124,133 @@ hr {
             text-transform: uppercase;
 
             margin: 86px 0px 4px 12px;
-		}
 
-		&__text {
+            animation-duration: 2s;
+      }
+
+      &__text {
             font-size: 16px;
             font-weight: 400;
             color: $color-wh;
             letter-spacing: 0.3px;
             text-align: center;
-		}
 
-		&__scroll {
+            animation-duration: 2s;
+            animation-delay: 1s;
+      }
+
+      &__scroll{
+            position: relative;
+            height: 30px;
+            text-align: center;
+            transition: 0.8s;
+
+            animation-duration: 2s;
+            animation-delay: 2s;
+      }
+
+      &__scroll-up{
             font-size: 11px;
             font-weight: 400;
             color: $color-wh;
             letter-spacing: 3.4px;
             word-spacing: 2px;
             text-transform: uppercase;
-            text-align: center;
-		}
+
+            opacity: 1;
+            transition: opacity 0.3s;
+      }
+
+      &__scroll-down{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-size: 30px;
+            color: $color-wh;
+
+            opacity: 0;
+            transition: all 0.7s;
+      }
+
+      &__scroll:hover &__scroll-up{
+            opacity: 0;
+      }
+      
+      &__scroll:hover &__scroll-down{
+            opacity: 1;
+      }
 }
 
 .menu {
 
-		&__nav {
+      &__nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             padding: 24px 0 23px;
-		}
+      }
 
-		&__logo {
+      &__logo {
             max-width: 80px;
-		}
+      }
 
-		&__list {
+      &__list {
             display: flex;
             gap: 42px;
             align-items: center;
             text-transform: uppercase;
-		}
+      }
 
-        &__list-item {
+      &__list-item {
             display: block;
             width: 45px;
             height: 19px;
-        }
+      }
 
-		&__list-item  a{
+      &__list-item  a{
             font-size: 12px;
             font-weight: 600;
             color: rgb(91, 80, 72);
             letter-spacing: 1.09px;
-		}
+            transition: all 0.5s;
+      }
 
-        &__list-item  a:hover{
+      &__list-item  a:hover{
             font-weight: 700;
             color: $color-blu1;
-        }
+            
+      }
+
+      &__burger {
+            width: 30px;
+            height: 20px;
+
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+
+            margin-right: 30px;
+      }
+
+      &__burger-line {
+            width: 100%;
+            height: 3px;
+            background-color: $color-gr;
+            transition: all 0.3s;
+      }
+
+      &__burger:hover &__burger-line{
+            background-color: $color-blu1;
+      }
 }
 
+
+
+// STORE
 
 
 
