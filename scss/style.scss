@@ -16,7 +16,108 @@ body {
     font-weight: 400;
 }
 
+hr {
+    background-color: #F2F2F2;
+    height: 1px;
+}
 
+.container {
+    max-width: 940px;
+    width: 100%;
+    
+    margin: 0 auto;
+}
+
+// HEADER
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url(../img/1header-bg.png) center/cover no-repeat;
+    width: 100%;
+    height: 100vh;
+
+    padding: 41px 0 72px;
+
+
+		&__logo {
+            max-width: 102px;
+
+            margin: 0 auto;
+		}
+
+		&__title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            font-size: 60px;
+            color: $color-wh;
+            text-align: center;
+            letter-spacing: 5.2px;
+            word-spacing: 4.2px;
+            text-transform: uppercase;
+
+            margin: 86px 0px 4px 12px;
+		}
+
+		&__text {
+            font-size: 16px;
+            font-weight: 400;
+            color: $color-wh;
+            letter-spacing: 0.3px;
+            text-align: center;
+		}
+
+		&__scroll {
+            font-size: 11px;
+            font-weight: 400;
+            color: $color-wh;
+            letter-spacing: 3.4px;
+            word-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+		}
+}
+
+.menu {
+
+		&__nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 24px 0 23px;
+		}
+
+		&__logo {
+            max-width: 80px;
+		}
+
+		&__list {
+            display: flex;
+            gap: 42px;
+            align-items: center;
+            text-transform: uppercase;
+		}
+
+        &__list-item {
+            display: block;
+            width: 45px;
+            height: 19px;
+        }
+
+		&__list-item  a{
+            font-size: 12px;
+            font-weight: 600;
+            color: rgb(91, 80, 72);
+            letter-spacing: 1.09px;
+		}
+
+        &__list-item  a:hover{
+            font-weight: 700;
+            color: $color-blu1;
+        }
+}
 
 
 
