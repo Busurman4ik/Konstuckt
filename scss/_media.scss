@@ -1,20 +1,44 @@
 // 1200
 @media screen and (max-width:1200px) {
-    
+    .title,.menu,.story {
+        padding-right:15px;
+        padding-left:15px;
+    }
 }
+
+// 992
+@media screen and (max-width:992px) {
+    .story {
+
+        &__grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+
+        &__block {
+            max-width: 70%;
+
+            margin: 0 auto;
+        }
+
+        &__block-text {
+            margin-bottom: 40px;
+      }
+
+        &__flex{
+            
+        }
+    }
+}
+
 
 // 768
 @media screen and (max-width:768px) {
-    
-}
-
-// 576
-@media screen and (max-width:576px) {
     .title {
         padding-bottom: 30px;
 
         &__title {
-            font-size: 40px;
+            font-size: 50px;
         }
 
         &__text {
@@ -29,6 +53,36 @@
 
         &__burger {
             display: flex;
+        }
+    }
+}
+
+// 576
+@media screen and (max-width:576px) {
+    .title {
+        padding-top: 20px;
+
+        &__title {
+            font-size: 40px;
+        }
+
+        &__text {
+            font-size: 12px;
+        }
+    }
+
+    .story {
+        &__flex{
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+
+        &__flex-item1,&__flex-item2,&__flex-item3 {
+            width: 100%;
+        }
+
+        &__flex-item1 {
+            background-size: cover;
         }
     }
 }

@@ -17,7 +17,7 @@ body {
 }
 
 hr {
-    background-color: #F2F2F2;
+    background-color: #ada9a9;
     height: 1px;
 }
 
@@ -25,7 +25,6 @@ hr {
     max-width: 940px;
     width: 100%;
     
-    padding: 0 30px;
     margin: 0 auto;
 }
 
@@ -93,11 +92,12 @@ header {
       overflow: hidden;
 }
 
+// title
 .title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url(../img/1header-bg.png) center/cover no-repeat;
+    background: url(../img/1header-bg.webp) center/cover no-repeat;
     width: 100%;
     height: 100vh;
 
@@ -170,6 +170,7 @@ header {
             font-size: 30px;
             color: $color-wh;
 
+
             opacity: 0;
             transition: all 0.7s;
       }
@@ -180,15 +181,33 @@ header {
       
       &__scroll:hover &__scroll-down{
             opacity: 1;
-      }
+
+            top: 0;
+            animation-name: run-scroll;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            @keyframes run-scroll {
+                  0% {
+                        top: 0;
+                  }
+                  100%{
+                        top: 15px;
+                  }
+            }
+      } 
 }
 
+// menu
 .menu {
 
       &__nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            position: relative;
 
             padding: 24px 0 23px;
       }
@@ -206,8 +225,11 @@ header {
 
       &__list-item {
             display: block;
-            width: 45px;
+            width: 100%;
             height: 19px;
+            text-align: center;
+
+            position: relative;
       }
 
       &__list-item  a{
@@ -218,9 +240,33 @@ header {
             transition: all 0.5s;
       }
 
+
       &__list-item  a:hover{
-            font-weight: 700;
             color: $color-blu1;
+            
+      }
+
+      &__list-item  a::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: $color-blu1;
+
+            transition: width 1s;
+      }
+
+      &__list-item  a:hover::after {
+            content: "";
+            position: absolute;
+            
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $color-blu1;
             
       }
 
@@ -233,7 +279,11 @@ header {
             justify-content: space-between;
             cursor: pointer;
 
-            margin-right: 30px;
+            position: absolute;
+            top: 20px;
+            right: 5px;
+
+            margin-right: 10px;
       }
 
       &__burger-line {
@@ -248,10 +298,108 @@ header {
       }
 }
 
-
-
 // STORE
 
+.story {
+      padding: 58px 0 59px;
+
+      &__title {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.31px;
+
+            position: relative;
+            text-align: center;
+
+            margin-bottom: 73px;
+      }
+
+      &__title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 50px;
+            height: 1px;
+            background-color: $color-blu1;
+            
+      }
+
+      &__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+      }
+
+      &__block {
+            max-width: 395px;
+      }
+
+      &__block-title {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.24;
+
+            margin-bottom: 35px;
+      }
+
+      &__block-title span{
+            color: $color-blu2;
+      }
+
+      &__block-text {
+            color: #48555B;
+            font-weight: 400;
+            line-height: 23px;
+            letter-spacing: 0.19px;
+      }
+
+      &__flex {
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            padding-left: 10px;
+      }
+
+      &__flex-item1,&__flex-item2,&__flex-item3 {
+            width: 33.333%;
+            min-width: 140px;
+            height: 224px;
+      }
+
+      &__flex-item1 {
+            background-image: url(../img/2Store-1.webp);
+            background-position: 95% 10%;
+            background-repeat: no-repeat;
+      }
+
+      &__flex-item2 {
+            background-image: url(../img/2Store-2.webp);
+            background-position: 35% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+
+      &__flex-item3 {
+            background-image: url(../img/2Store-3.webp);
+            background-position: 62% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+
+      &__flex-title {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 29px;
+            letter-spacing: 0.19px;
+            text-transform: uppercase;
+            color: $color-wh;
+
+            padding: 17px 16px;
+      }
+}
 
 
 
