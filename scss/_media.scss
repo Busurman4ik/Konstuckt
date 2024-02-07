@@ -1,6 +1,6 @@
 // 1200
 @media screen and (max-width:1200px) {
-    .title,.menu,.story {
+    .title,.menu,.story,.service {
         padding-right:15px;
         padding-left:15px;
     }
@@ -24,10 +24,23 @@
         &__block-text {
             margin-bottom: 40px;
       }
+    }
 
-        &__flex{
-            
-        }
+    .service {
+        &__up-flex {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+
+            margin-bottom: 50px;
+      }
+      
+        &__up-content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 31px;
+      }
     }
 }
 
@@ -54,6 +67,14 @@
         &__burger {
             display: flex;
         }
+    }
+
+    .service {
+
+        &__down-grid {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 28px;
+      }
     }
 }
 

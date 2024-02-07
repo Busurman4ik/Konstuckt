@@ -1,6 +1,9 @@
 // Reset
 @import "_nullstyle";
 
+// Анимация
+@import "_animation";
+
 // Fonts
 // font-family: 'Bebas Neue', sans-serif;
 // font-family: 'Open Sans', sans-serif;
@@ -28,64 +31,7 @@ hr {
     margin: 0 auto;
 }
 
-// ANIMATION
-// UP
-.animation-up {
-      transform: translateY(-300%);
-      animation: up 1s ease-out forwards;
-      @keyframes up {
-            0% {
-                  transform: translateY(-300%);
-            }
 
-            100%{
-                  transform: translateY(0);
-            }
-      }
-}
-
-// LEFT
-.animation-left {
-      transform: translateX(-150%);
-      animation: left 1s ease-out forwards;
-      @keyframes left {
-            0% {
-                  transform: translateX(-150%);
-            }
-            100% {
-                  transform: translatey(0%);
-            }
-      }
-}
-
-// RIGHT
-.animation-right {
-      transform: translateX(150%);
-      animation: right 1s ease-out forwards;
-      @keyframes right {
-            0% {
-                  transform: translateX(150%);
-            }
-            100% {
-                  transform: translatey(0%);
-            }
-      }
-}
-
-// DOWN
-.animation-down {
-      transform: translateY(300%);
-      animation: down 1s ease-out forwards;
-      @keyframes down{
-            0%{
-                  transform: translateY(300%);
-            }
-
-            100%{
-                  transform: translateY(0);
-            }
-      }
-}
 
 // HEADER
 header {
@@ -315,7 +261,7 @@ header {
             margin-bottom: 73px;
       }
 
-      &__title::after {
+      &__title::before {
             content: "";
             position: absolute;
             bottom: -15px;
@@ -323,7 +269,7 @@ header {
             transform: translateX(-50%);
 
             width: 50px;
-            height: 1px;
+            height: 2px;
             background-color: $color-blu1;
             
       }
@@ -401,7 +347,125 @@ header {
       }
 }
 
+// CAPABILITIES
+.service {
+      padding: 61px 0 57px;
+      // UP
+      &__up-flex {
+            display: flex;
+            justify-content: space-between;
 
+            margin-bottom: 80px;
+      }
+
+      &__up-content {
+            display: flex;
+            gap: 31px;
+      }
+
+      &__up-title {
+            position: relative;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2.31px;
+            text-transform: uppercase;
+
+            height: 38px;
+            max-width: 200px;
+
+            padding-top: 2px;
+      }
+
+      &__up-title::before {
+            content: "";
+            display: block;
+
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+
+            width: 50px;
+            height: 2px;
+            background-color: $color-blu1;
+
+      }
+
+      &__up-text {
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0.2px;
+            color: $color-gr;
+
+            max-width: 407px;
+
+            padding-right: 12px;
+      }
+
+      &__up-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 40px;
+
+            font-size: 13px;
+            font-weight: 700;
+            color: $color-wh;
+            text-transform: uppercase;
+            word-spacing: 2px;
+
+            background-color: $color-blu1;
+            padding: 12px 32px 12px 30px;
+
+            cursor: pointer;
+            transition: background-color 0.5s;
+      }
+
+      &__up-button:hover {
+            background-color: $color-gr;
+      }
+
+      // DOWN
+      &__down-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+      }
+
+      &__down-item {
+            border: 2px solid #c2bcbc;
+            padding: 35px 20px;
+      }
+
+      &__down-icon {
+            max-width: 66px;
+
+            margin-bottom: 25px;
+      }
+
+      &__down-icon img{
+            width: 100%;
+            
+      }
+
+      &__down-h3 {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0.43px;
+            text-transform: uppercase;
+
+            margin-bottom: 13px;
+      }
+
+      &__down-text {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 23px;
+            letter-spacing: 0.19px;
+            color: $color-gr;
+      }
+}
 
 
 

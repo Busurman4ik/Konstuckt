@@ -1,0 +1,59 @@
+// ANIMATION
+
+// UP
+.animation-up {
+    transform: translateY(-300%);
+    animation: up 1s ease-out forwards;
+    @keyframes up {
+          0% {
+                transform: translateY(-300%);
+          }
+
+          100%{
+                transform: translateY(0);
+          }
+    }
+}
+
+// LEFT
+.animation-left {
+    transform: translateX(-150%);
+    animation: left 1s ease-out forwards;
+    @keyframes left {
+          0% {
+                transform: translateX(-150%);
+          }
+          100% {
+                transform: translatey(0%);
+          }
+    }
+}
+
+// RIGHT
+.animation-right {
+    transform: translateX(150%);
+    animation: right 1s ease-out forwards;
+    @keyframes right {
+          0% {
+                transform: translateX(150%);
+          }
+          100% {
+                transform: translatey(0%);
+          }
+    }
+}
+
+// DOWN
+.animation-down {
+    transform: translateY(300%);
+    animation: down 1s ease-out forwards;
+    @keyframes down{
+          0%{
+                transform: translateY(300%);
+          }
+
+          100%{
+                transform: translateY(0);
+          }
+    }
+}
