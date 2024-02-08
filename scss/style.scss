@@ -14,6 +14,14 @@ $color-gr: #48555B;
 $color-blu1: #00A4E5;
 $color-blu2: #16ACE8;
 
+.color-fff{
+      color: #fff;
+}
+
+html {
+      scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -44,7 +52,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: url(../img/1header-bg.webp) center/cover no-repeat;
+    background-image: url(../img/1header-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
     width: 100%;
     height: 100vh;
 
@@ -506,7 +517,256 @@ header {
       }
 }
 
+// SIGNUP
+.signup {
+      background-color: #171819;
 
+      padding: 27px 0;
+
+      &__flex {
+            display: flex;
+            gap: 70px;
+
+            justify-content: center;
+      }
+
+      &__title {
+            display: flex;
+            align-items: center;
+
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.85px;
+            text-align: center;
+
+            color: #fff;
+      }
+
+      &__form {
+            display: flex;
+            
+      }
+
+      &__input {
+            display: flex;
+            align-items: center;
+
+            width: 250px;
+            height: 40px;
+
+            letter-spacing: 0.4px;
+
+            border: 1px solid #979797;
+
+            padding: 0 15px;
+      }
+
+      &__button {
+            padding: 11px 48px;
+      }
+}
+
+// FOOTER
+.footer {
+
+      // UP
+      &__up {
+            background-color: #141A20;
+
+            padding: 42px 0 40px;
+      }
+
+      &__up-flex {
+            display: flex;
+            
+      }
+
+      // COMPANY
+      &__company {
+            max-width: 250px;
+
+            margin-right: 71px;
+      }
+
+      &__company-title {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.85px;
+            text-transform: uppercase;
+
+            margin-bottom: 24px;
+            
+      }
+
+      &__company-logo {
+            max-width: 102px;
+
+            margin-bottom: 15px;
+      }
+
+      &__company-text {
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0.85px;
+      }
+
+      &__column {
+            display: flex;
+      }
+      // LINK
+
+      &__links {
+            max-width: 262px;
+
+            margin-right: 68px;
+      }
+
+      &__links-title {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.85px;
+            text-transform: uppercase;
+
+            margin-bottom: 16px;
+      }
+
+      &__links-list {
+            display: flex;
+      }
+
+      &__links-item1 {
+            padding-right: 17px;
+      }
+
+      &__links-item2 {
+            padding-left: 17px;
+            padding-right: 19px;
+      }
+
+      &__links-item3 {
+            padding-left: 19px;
+      }
+
+
+      &__links-list li{
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 25px;
+            letter-spacing: 0.85px;
+            text-transform: uppercase;
+      }
+
+      &__links-list a{
+            color: #fff;
+
+            transition: color 0.4s;
+      }
+      
+      &__links-list a:hover{
+            color: $color-blu1;
+      }
+      
+      // CONTACT
+      &__contact {
+            max-width: 141px;
+
+            margin-right: 42px;
+      }
+
+      &__contact-title {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.85px;
+
+            margin-bottom: 19px;
+      }
+
+      &__contact div{
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0.85px;
+
+            margin-bottom: 15px;
+      }
+
+      &__contact a{
+            color: #fff;
+
+            transition: color 0.4s;
+      }
+
+      &__contact a:hover{
+            color: $color-blu1;
+      }
+
+      // SOCIAL
+      &__social {
+            display: flex;
+
+            padding-top: 30px;
+            margin-left: 23px;
+      }
+
+      &__social a{
+            color: #fff;
+            transition: all 0.4s;
+      }
+
+      &__social a:hover{
+            transform: scale(1.4);
+            color: $color-blu1;
+      }
+
+      &__social-fb{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 20px;
+            height: 20px;
+
+            margin-right: 15px;
+      }
+
+      &__social-tw{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 20px;
+            height: 20px;
+
+            margin-right: 16px;
+      }
+
+      &__social-go{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 20px;
+            height: 20px;
+      }
+
+      // DOWN
+
+      &__down {
+            background-color: #171819;
+
+            padding: 10px 0 23px;
+      }
+
+      &__down-text {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.85px;
+            text-align: center;
+
+            color: #FFFFFF;
+      }
+}
 
 
 

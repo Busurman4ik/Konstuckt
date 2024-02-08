@@ -1,6 +1,6 @@
 // 1200
 @media screen and (max-width:1200px) {
-    .title,.menu,.story,.service,.touch {
+    .title,.menu,.story,.service,.touch,.signup,.footer__up,.footer__down {
         padding-right:15px;
         padding-left:15px;
     }
@@ -53,6 +53,21 @@
             padding-bottom: 100px;
         }
     }
+
+    .footer{
+        &__up-flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        } 
+
+        &__company {
+            text-align: center;
+
+            margin-right: 0;
+        }
+    }
 }
 
 
@@ -101,6 +116,41 @@
             padding-bottom: 100px;
         }
     }
+
+    .signup{
+        &__flex {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+      }
+    }
+
+    .footer{
+        &__column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+      }
+
+      &__links {
+        text-align: center;
+
+        margin-right: 0;
+      }
+
+      &__contact {
+        text-align: center;
+
+        margin: 0 auto;
+      }
+
+      &__social {
+        padding-top: 0;
+        padding-left: 0;
+
+        margin: 0 auto;
+      }
+    }
 }
 
 // 576
@@ -130,5 +180,13 @@
         &__flex-item1 {
             background-size: cover;
         }
+    }
+
+    .signup{
+        &__form {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+      }
     }
 }
