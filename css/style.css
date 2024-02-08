@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  color: #48555B;
 }
 
 hr {
@@ -256,9 +257,9 @@ header {
 .menu__list-item a {
   font-size: 12px;
   font-weight: 600;
-  color: rgb(91, 80, 72);
   letter-spacing: 1.09px;
   transition: all 0.5s;
+  color: #48555B;
 }
 .menu__list-item a:hover {
   color: #00A4E5;
@@ -343,7 +344,6 @@ header {
   color: #16ACE8;
 }
 .story__block-text {
-  color: #48555B;
   font-weight: 400;
   line-height: 23px;
   letter-spacing: 0.19px;
@@ -387,7 +387,7 @@ header {
 }
 
 .service {
-  padding: 61px 0 57px;
+  padding: 61px 0 115px;
 }
 .service__up-flex {
   display: flex;
@@ -396,6 +396,7 @@ header {
 }
 .service__up-content {
   display: flex;
+  align-items: center;
   gap: 31px;
 }
 .service__up-title {
@@ -423,27 +424,11 @@ header {
   font-weight: 400;
   line-height: 19px;
   letter-spacing: 0.2px;
-  color: #48555B;
   max-width: 407px;
   padding-right: 12px;
 }
 .service__up-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 40px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  word-spacing: 2px;
-  background-color: #00A4E5;
-  padding: 12px 32px 12px 30px;
-  cursor: pointer;
-  transition: background-color 0.5s;
-}
-.service__up-button:hover {
-  background-color: #48555B;
+  padding: 19px 31px;
 }
 .service__down-grid {
   display: grid;
@@ -474,16 +459,63 @@ header {
   font-weight: 400;
   line-height: 23px;
   letter-spacing: 0.19px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px;
+  max-height: 40px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  word-spacing: 2px;
+  background-color: #00A4E5;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.button:hover {
+  background-color: #48555B;
+}
+
+.touch {
+  background-image: url(../img/4touch-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.touch__block {
+  max-width: 350px;
+  padding: 120px 0 232px;
+  margin: 0 auto;
+}
+.touch__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0.15px;
+  text-align: center;
   color: #48555B;
+  margin-bottom: 35px;
+}
+.touch__button {
+  padding: 21px 25px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px) {
-  .title, .menu, .story, .service {
+  .title, .menu, .story, .service, .touch {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 @media screen and (max-width: 992px) {
+  .story {
+    padding-bottom: 40px;
+  }
   .story__grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -493,6 +525,10 @@ header {
   }
   .story__block-text {
     margin-bottom: 40px;
+  }
+  .service {
+    padding-top: 40px;
+    padding-bottom: 50px;
   }
   .service__up-flex {
     flex-wrap: wrap;
@@ -505,6 +541,10 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     gap: 31px;
+  }
+  .touch__block {
+    padding-top: 60px;
+    padding-bottom: 100px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -523,9 +563,21 @@ header {
   .menu__burger {
     display: flex;
   }
+  .story {
+    padding-top: 29px;
+    padding-bottom: 30px;
+  }
+  .service {
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
   .service__down-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 28px;
+  }
+  .touch__block {
+    padding-top: 25px;
+    padding-bottom: 100px;
   }
 }
 @media screen and (max-width: 576px) {
