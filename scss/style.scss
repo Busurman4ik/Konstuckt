@@ -11,6 +11,7 @@
 // Color
 $color-wh: #FFFFFF;
 $color-gr: #48555B;
+$color-night: #404649;
 $color-blu1: #00A4E5;
 $color-blu2: #16ACE8;
 
@@ -23,15 +24,15 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: $color-gr;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      color: $color-gr;
 }
 
-hr {
-    background-color: #ada9a9;
-    height: 1px;
+body._lock {
+      overflow: hidden;
 }
+
 
 .container {
     max-width: 940px;
@@ -135,6 +136,8 @@ header {
 
       &__scroll:hover &__scroll-up{
             opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
       }
       
       &__scroll:hover &__scroll-down{
@@ -157,8 +160,64 @@ header {
       } 
 }
 
-// menu
+.external__menu {
+      height: 100%;
+      width: 100%;
+}
+
+//menu
+.menu._sticky{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 12;
+}
+
+
+// Переключатель
+.switch-btn {
+      width: 72px;
+      height: 38px;
+      border-radius: 19px;
+      background-color:  #000;
+      z-index: 10;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      transition-duration: 300ms;
+}
+
+.switch-btn::after {
+      content: "";
+      height: 32px;
+      width: 32px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-radius: 17px;
+      background-color: #fff;
+      transition-duration: 300ms;
+}
+
+
+.switch-btn.dark {
+      background-color:  #bfbfbf;
+}
+
+.switch-btn.dark::after {
+      left: 37px;
+}
+
+
+
 .menu {
+      background-color: $color-wh;
+      border-bottom: #ada9a9 solid 2px;
+      padding-bottom: 20px;
+      
 
       &__nav {
             display: flex;
@@ -167,12 +226,44 @@ header {
 
             position: relative;
 
-            padding: 24px 0 23px;
+            padding-top: 24px;
+      }
+
+      &__up {
+            display: flex;
+            justify-content: space-between;
+            width: 33%;
       }
 
       &__logo {
+            position: relative;
             max-width: 80px;
+            z-index: 11;
       }
+
+      &__burger {
+            width: 30px;
+            height: 20px;
+
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+
+            z-index: 11;
+      }
+
+      &__burger::before,
+      &__burger::after,
+      &__burger-line {
+            content: "";
+            position: relative;
+            width: 100%;
+            height: 3px;
+            background-color: $color-gr;
+      }
+
+      
 
       &__list {
             display: flex;
@@ -181,31 +272,30 @@ header {
             text-transform: uppercase;
       }
 
+
       &__list-item {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.09px;
+            transition: all 0.5s;
+
             display: block;
             width: 100%;
             height: 19px;
             text-align: center;
 
             position: relative;
-      }
-
-      &__list-item  a{
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1.09px;
-            transition: all 0.5s;
             
             color: $color-gr;
       }
 
 
-      &__list-item  a:hover{
+      &__list-item:hover{
             color: $color-blu1;
             
       }
 
-      &__list-item  a::after {
+      &__list-item::after {
             content: "";
             position: absolute;
             bottom: -3px;
@@ -218,7 +308,7 @@ header {
             transition: width 1s;
       }
 
-      &__list-item  a:hover::after {
+      &__list-item:hover::after {
             content: "";
             position: absolute;
             
@@ -229,32 +319,6 @@ header {
             
       }
 
-      &__burger {
-            width: 30px;
-            height: 20px;
-
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-
-            position: absolute;
-            top: 20px;
-            right: 5px;
-
-            margin-right: 10px;
-      }
-
-      &__burger-line {
-            width: 100%;
-            height: 3px;
-            background-color: $color-gr;
-            transition: all 0.3s;
-      }
-
-      &__burger:hover &__burger-line{
-            background-color: $color-blu1;
-      }
 }
 
 // STORE
@@ -770,13 +834,29 @@ header {
 
 
 
+.darkstyle {
+      background-color: $color-night;
+      color: $color-wh;
+}
 
+.darkstyle a{
+      color: $color-wh;
+}
 
+.touch.darkstyle{
+      background-image:url(../img/4Touch-bg-night.webp); 
+}
 
+.touch.darkstyle .touch__title {
+      color: $color-wh;
+}
 
-
-
-
+.menu__burger.darkstyle::before,
+.menu__burger.darkstyle::after,
+.menu__burger-line.darkstyle {
+      content: "";
+      background-color: $color-wh;
+}
 
 
 

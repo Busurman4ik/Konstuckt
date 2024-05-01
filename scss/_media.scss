@@ -4,6 +4,8 @@
         padding-right:15px;
         padding-left:15px;
     }
+
+    
 }
 
 // 992
@@ -85,18 +87,108 @@
         }
     }
 
-    .menu {
-        &__list {
-            display: none;
+    .menu{
+        &__nav {
+            display: block;
+        }
+
+        &__up {
+            width: 93%;
+            align-items: center
         }
 
         &__burger {
             display: flex;
+            justify-content: space-between
+        }
+
+
+        &__list {
+            flex-direction: column;
+            position: fixed;
+
+            top: -100%;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 10;
+
+            overflow: auto;
+
+            padding-top: 100px;
+
+            transition: all ease 1s;
+            background-color: $color-wh;
+        }
+
+        &__list.darkstyle{
+            background-color: $color-night;
+        }
+
+        &__list-item {
+            top: 10%;
+            opacity: 0;
+            transition: all ease 0.3s;
         }
     }
 
+    //------------ACTIVE----------------//
+
+    .menu._active .menu__list{
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+
+    .menu._active .menu__list-item{
+        opacity: 1;
+    }
+
+    .menu._active a {
+        font-size: 20px;
+    }
+
+    .menu._active .menu__up {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0px;
+        left: 0;
+        
+        padding: 23px  15px 0;
+
+        width: 93%;
+        height: 60px;
+
+        z-index: 11;
+
+        background-color: $color-wh;
+    }
+
+    .menu._active.darkstyle .menu__up{
+        background-color: $color-night;
+    }
+
+    .menu._active .menu__burger::after {
+        top: -10px;
+        transform: rotate(-45deg);
+    }
+
+    .menu._active .menu__burger::before {
+        top: 7px;
+        transform: rotate(45deg);
+    }
+
+    .menu._active .menu__burger-line {
+        display: none;
+    }
+
+    //---------------------------------//
+
     .story {
-        padding-top:29px;
+        padding-top: 29px;
         padding-bottom: 30px;
     }
 

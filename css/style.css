@@ -74,54 +74,58 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 .animation-up {
-  transform: translateY(-300%);
+  position: relative;
+  top: -100%;
   animation: up 1s ease-out forwards;
 }
 @keyframes up {
   0% {
-    transform: translateY(-300%);
+    top: -100%;
   }
   100% {
-    transform: translateY(0);
+    top: 0;
   }
 }
 
 .animation-left {
-  transform: translateX(-150%);
+  position: relative;
+  left: -100%;
   animation: left 1s ease-out forwards;
 }
 @keyframes left {
   0% {
-    transform: translateX(-150%);
+    left: -100%;
   }
   100% {
-    transform: translatey(0%);
+    left: 0;
   }
 }
 
 .animation-right {
-  transform: translateX(150%);
+  position: relative;
+  right: -100%;
   animation: right 1s ease-out forwards;
 }
 @keyframes right {
   0% {
-    transform: translateX(150%);
+    right: -100%;
   }
   100% {
-    transform: translatey(0%);
+    right: 0;
   }
 }
 
 .animation-down {
-  transform: translateY(300%);
+  position: relative;
+  bottom: -100%;
   animation: down 1s ease-out forwards;
 }
 @keyframes down {
   0% {
-    transform: translateY(300%);
+    bottom: -100%;
   }
   100% {
-    transform: translateY(0);
+    bottom: 0;
   }
 }
 
@@ -139,9 +143,8 @@ body {
   color: #48555B;
 }
 
-hr {
-  background-color: #ada9a9;
-  height: 1px;
+body._lock {
+  overflow: hidden;
 }
 
 .container {
@@ -223,6 +226,8 @@ header {
 }
 .title__scroll:hover .title__scroll-up {
   opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 .title__scroll:hover .title__scroll-down {
   opacity: 1;
@@ -242,15 +247,89 @@ header {
   }
 }
 
+.external__menu {
+  height: 100%;
+  width: 100%;
+}
+
+.menu._sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 12;
+}
+
+.switch-btn {
+  width: 72px;
+  height: 38px;
+  border-radius: 19px;
+  background-color: #000;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 300ms;
+}
+
+.switch-btn::after {
+  content: "";
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 17px;
+  background-color: #fff;
+  transition-duration: 300ms;
+}
+
+.switch-btn.dark {
+  background-color: #bfbfbf;
+}
+
+.switch-btn.dark::after {
+  left: 37px;
+}
+
+.menu {
+  background-color: #FFFFFF;
+  border-bottom: #ada9a9 solid 2px;
+  padding-bottom: 20px;
+}
 .menu__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 24px 0 23px;
+  padding-top: 24px;
+}
+.menu__up {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
 }
 .menu__logo {
+  position: relative;
   max-width: 80px;
+  z-index: 11;
+}
+.menu__burger {
+  width: 30px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 11;
+}
+.menu__burger::before, .menu__burger::after, .menu__burger-line {
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #48555B;
 }
 .menu__list {
   display: flex;
@@ -259,23 +338,21 @@ header {
   text-transform: uppercase;
 }
 .menu__list-item {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.09px;
+  transition: all 0.5s;
   display: block;
   width: 100%;
   height: 19px;
   text-align: center;
   position: relative;
-}
-.menu__list-item a {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.09px;
-  transition: all 0.5s;
   color: #48555B;
 }
-.menu__list-item a:hover {
+.menu__list-item:hover {
   color: #00A4E5;
 }
-.menu__list-item a::after {
+.menu__list-item::after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -286,33 +363,12 @@ header {
   background-color: #00A4E5;
   transition: width 1s;
 }
-.menu__list-item a:hover::after {
+.menu__list-item:hover::after {
   content: "";
   position: absolute;
   right: 0;
   width: 100%;
   height: 2px;
-  background-color: #00A4E5;
-}
-.menu__burger {
-  width: 30px;
-  height: 20px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 5px;
-  margin-right: 10px;
-}
-.menu__burger-line {
-  width: 100%;
-  height: 3px;
-  background-color: #48555B;
-  transition: all 0.3s;
-}
-.menu__burger:hover .menu__burger-line {
   background-color: #00A4E5;
 }
 
@@ -692,6 +748,30 @@ header {
   color: #FFFFFF;
 }
 
+.darkstyle {
+  background-color: #404649;
+  color: #FFFFFF;
+}
+
+.darkstyle a {
+  color: #FFFFFF;
+}
+
+.touch.darkstyle {
+  background-image: url(../img/4Touch-bg-night.webp);
+}
+
+.touch.darkstyle .touch__title {
+  color: #FFFFFF;
+}
+
+.menu__burger.darkstyle::before,
+.menu__burger.darkstyle::after,
+.menu__burger-line.darkstyle {
+  content: "";
+  background-color: #FFFFFF;
+}
+
 @media screen and (max-width: 1200px) {
   .title, .menu, .story, .service, .touch, .signup, .footer__up, .footer__down {
     padding-right: 15px;
@@ -753,11 +833,74 @@ header {
   .title__text {
     font-size: 12px;
   }
-  .menu__list {
-    display: none;
+  .menu__nav {
+    display: block;
+  }
+  .menu__up {
+    width: 93%;
+    align-items: center;
   }
   .menu__burger {
     display: flex;
+    justify-content: space-between;
+  }
+  .menu__list {
+    flex-direction: column;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: auto;
+    padding-top: 100px;
+    transition: all ease 1s;
+    background-color: #FFFFFF;
+  }
+  .menu__list.darkstyle {
+    background-color: #404649;
+  }
+  .menu__list-item {
+    top: 10%;
+    opacity: 0;
+    transition: all ease 0.3s;
+  }
+  .menu._active .menu__list {
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .menu._active .menu__list-item {
+    opacity: 1;
+  }
+  .menu._active a {
+    font-size: 20px;
+  }
+  .menu._active .menu__up {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    padding: 23px 15px 0;
+    width: 93%;
+    height: 60px;
+    z-index: 11;
+    background-color: #FFFFFF;
+  }
+  .menu._active.darkstyle .menu__up {
+    background-color: #404649;
+  }
+  .menu._active .menu__burger::after {
+    top: -10px;
+    transform: rotate(-45deg);
+  }
+  .menu._active .menu__burger::before {
+    top: 7px;
+    transform: rotate(45deg);
+  }
+  .menu._active .menu__burger-line {
+    display: none;
   }
   .story {
     padding-top: 29px;

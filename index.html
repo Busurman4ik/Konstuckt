@@ -15,7 +15,7 @@
 
     <title>Konstruct</title>
 </head>
-<body>
+<body class="darkstyle">
     <!-- HEADER -->
     <header class="header" id="header">
         <!-- TITLE -->
@@ -33,34 +33,44 @@
             </div>
         </div>
         <!-- MENU -->
-        <div class="menu" id="menu">
-           <div class="container">
-                <nav class="menu__nav">
-                    <div class="menu__logo">
-                        <a class="menu__logo-link" href="#header">
-                            <img src="./img/company-logo-black.svg" alt="Konstruct">
-                        </a>     
-                    </div>
-                    <ul class="menu__list">
-                        <li class="menu__list-item"><a href="#!">Home</a></li>
-                        <li class="menu__list-item"><a href="#!">About</a></li>
-                        <li class="menu__list-item"><a href="#!">Service</a></li>
-                        <li class="menu__list-item"><a href="#!">Work</a></li>
-                        <li class="menu__list-item"><a href="#!">Contact</a></li>
-                    </ul>
-                    <div class="menu__burger">
-                        <div class="menu__burger-line"></div>
-                        <div class="menu__burger-line"></div>
-                        <div class="menu__burger-line"></div>
-                    </div>
-                </nav>
-           </div>
+        <div class="external__menu" id="menu">
+            <div class="menu darkstyle">
+               <div class="container">
+                    <nav class="menu__nav">
+
+                        <div class="menu__up">
+                            <div class="menu__logo">
+                                <a class="menu__logo-link" href="#header">
+                                    <img src="./img/company-logo-black.svg" alt="Konstruct">
+                                </a>     
+                            </div>
+
+                            <div class="switch-btn"></div>
+
+                            <div class="menu__burger darkstyle">
+                                <div class="menu__burger-line darkstyle"></div>
+            
+                            </div>
+                        </div>
+
+
+                        
+                        <ul class="menu__list darkstyle">
+                            <li><a class="menu__list-item" data-goto=".header" href="">Home</a></li>
+                            <li><a class="menu__list-item" data-goto=".story" href="">About</a></li>
+                            <li><a class="menu__list-item" data-goto=".service" href="">Service</a></li>
+                            <li><a class="menu__list-item" data-goto=".touch" href="">Work</a></li>
+                            <li><a class="menu__list-item" data-goto=".footer" href="">Contact</a></li>
+                        </ul>
+                    </nav>
+               </div>
+            </div>
         </div>
         <hr>
     </header>
 
     <!-- MAIN -->
-    <main>
+    <main >
         <!-- STORY -->
         <section class="story">
             <div class="container">
@@ -126,7 +136,7 @@
         </section>
 
         <!-- TOUCH -->
-        <section class="touch">
+        <section class="touch darkstyle">
             <div class="container">
                 <div class="touch__block">
                     <h2 class="touch__title">Want to build something amazing?</h2>
